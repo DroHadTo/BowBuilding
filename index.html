@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bow Mafia - Under Construction</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Fredoka+One:wght@400&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(45deg, #2c1810, #4a2c2a, #6b4423, #2c1810);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Fredoka One', cursive;
+            position: relative;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            z-index: 10;
+            position: relative;
+        }
+        
+        .main-title {
+            font-family: 'Creepster', cursive;
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            color: #ff6b6b;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+            margin-bottom: 20px;
+            animation: pulse 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes pulse {
+            from { transform: scale(1); }
+            to { transform: scale(1.05); }
+        }
+        
+        .subtitle {
+            font-size: clamp(1.2rem, 4vw, 2.5rem);
+            color: #ffd93d;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin-bottom: 30px;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 20px #ffd93d; }
+            to { text-shadow: 2px 2px 4px rgba(0,0,0,0.8), 0 0 30px #ffd93d, 0 0 40px #ffd93d; }
+        }
+        
+        .construction-text {
+            font-size: clamp(1rem, 3vw, 1.5rem);
+            color: #ff9f43;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+            max-width: 80%;
+        }
+        
+        .main-logo {
+            width: clamp(300px, 40vw, 600px);
+            height: auto;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 0 20px rgba(255,107,107,0.4));
+            animation: logoFloat 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes logoFloat {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-5px); }
+        }
+        
+        .floating-image {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.8;
+            filter: drop-shadow(0 0 10px rgba(255,107,107,0.3));
+        }
+        
+        .floating-image img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+        
+        /* Individual floating animations for each image */
+        .float-1 {
+            top: 10%;
+            left: 5%;
+            animation: float1 15s infinite linear;
+        }
+        
+        .float-2 {
+            top: 30%;
+            right: 10%;
+            animation: float2 12s infinite linear;
+        }
+        
+        .float-3 {
+            bottom: 20%;
+            left: 15%;
+            animation: float3 18s infinite linear;
+        }
+        
+        .float-4 {
+            top: 60%;
+            right: 5%;
+            animation: float4 14s infinite linear;
+        }
+        
+        .float-5 {
+            top: 80%;
+            left: 50%;
+            animation: float5 16s infinite linear;
+        }
+        
+        .float-6 {
+            top: 15%;
+            left: 70%;
+            animation: float6 13s infinite linear;
+        }
+        
+        .float-7 {
+            bottom: 10%;
+            right: 30%;
+            animation: float7 17s infinite linear;
+        }
+        
+        .float-8 {
+            top: 45%;
+            left: 10%;
+            animation: float8 11s infinite linear;
+        }
+        
+        .float-9 {
+            bottom: 40%;
+            right: 15%;
+            animation: float9 19s infinite linear;
+        }
+        
+        /* Floating animations with different paths */
+        @keyframes float1 {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(100px, -50px) rotate(90deg); }
+            50% { transform: translate(200px, 50px) rotate(180deg); }
+            75% { transform: translate(50px, 100px) rotate(270deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+        
+        @keyframes float2 {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(-80px, 80px) rotate(120deg); }
+            66% { transform: translate(-160px, -40px) rotate(240deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+        
+        @keyframes float3 {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            20% { transform: translate(60px, -80px) rotate(72deg); }
+            40% { transform: translate(120px, 20px) rotate(144deg); }
+            60% { transform: translate(80px, 100px) rotate(216deg); }
+            80% { transform: translate(-20px, 60px) rotate(288deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+        
+        @keyframes float4 {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-120px, -80px) rotate(180deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+        
+        @keyframes float5 {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(-70px, -100px) rotate(90deg); }
+            50% { transform: translate(-140px, 0px) rotate(180deg); }
+            75% { transform: translate(-70px, 100px) rotate(270deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+        
+        @keyframes float6 {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            30% { transform: translate(-90px, 60px) rotate(108deg); }
+            60% { transform: translate(-50px, 120px) rotate(216deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+        
+        @keyframes float7 {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            40% { transform: translate(100px, -70px) rotate(144deg); }
+            80% { transform: translate(50px, -140px) rotate(288deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+        
+        @keyframes float8 {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(80px, 80px) rotate(90deg); }
+            50% { transform: translate(160px, 0px) rotate(180deg); }
+            75% { transform: translate(80px, -80px) rotate(270deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+        
+        @keyframes float9 {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            35% { transform: translate(-60px, -90px) rotate(126deg); }
+            70% { transform: translate(-120px, 30px) rotate(252deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .floating-image img {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }
+        
+        /* Loading animation for images */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.5); }
+            to { opacity: 0.8; transform: scale(1); }
+        }
+        
+        .floating-image {
+            animation-delay: var(--delay);
+        }
+        
+        .float-1 { --delay: 0.5s; animation: fadeIn 1s ease-out 0.5s both, float1 15s infinite linear 1.5s; }
+        .float-2 { --delay: 1s; animation: fadeIn 1s ease-out 1s both, float2 12s infinite linear 2s; }
+        .float-3 { --delay: 1.5s; animation: fadeIn 1s ease-out 1.5s both, float3 18s infinite linear 2.5s; }
+        .float-4 { --delay: 2s; animation: fadeIn 1s ease-out 2s both, float4 14s infinite linear 3s; }
+        .float-5 { --delay: 2.5s; animation: fadeIn 1s ease-out 2.5s both, float5 16s infinite linear 3.5s; }
+        .float-6 { --delay: 3s; animation: fadeIn 1s ease-out 3s both, float6 13s infinite linear 4s; }
+        .float-7 { --delay: 3.5s; animation: fadeIn 1s ease-out 3.5s both, float7 17s infinite linear 4.5s; }
+        .float-8 { --delay: 4s; animation: fadeIn 1s ease-out 4s both, float8 11s infinite linear 5s; }
+        .float-9 { --delay: 4.5s; animation: fadeIn 1s ease-out 4.5s both, float9 19s infinite linear 5.5s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="assets/images/bowmafiadao.png" alt="Bow Mafia DAO" class="main-logo">
+        <h2 class="subtitle">Website Under Construction</h2>
+        <p class="construction-text">The family is cooking up something special... 🏹💕<br>
+        Check back soon for the ultimate love heist experience!</p>
+    </div>
+    
+    <!-- Floating Images -->
+    <div class="floating-image float-1">
+        <img src="assets/images/love.png" alt="Love">
+    </div>
+    <div class="floating-image float-2">
+        <img src="assets/images/love (1).png" alt="Love">
+    </div>
+    <div class="floating-image float-3">
+        <img src="assets/images/love (2).png" alt="Love">
+    </div>
+    <div class="floating-image float-4">
+        <img src="assets/images/love.png" alt="Love">
+    </div>
+    <div class="floating-image float-5">
+        <img src="assets/images/love (1).png" alt="Love">
+    </div>
+    <div class="floating-image float-6">
+        <img src="assets/images/love (2).png" alt="Love">
+    </div>
+    <div class="floating-image float-7">
+        <img src="assets/images/love.png" alt="Love">
+    </div>
+    <div class="floating-image float-8">
+        <img src="assets/images/love (1).png" alt="Love">
+    </div>
+    <div class="floating-image float-9">
+        <img src="assets/images/love (2).png" alt="Love">
+    </div>
+</body>
+</html>
